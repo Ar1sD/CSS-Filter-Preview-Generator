@@ -1,0 +1,191 @@
+body{
+    margin:0 2%;
+    max-width: 100vw;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+header{
+    display: inline-block;
+    margin: 0.5% 3%;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+section{
+    margin:0;
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+div{
+    max-width: inherit;
+}
+
+img{
+    max-width: 100%;
+    min-width: 320px;
+
+}
+
+input[type=number]{
+    font-size: 16px;
+    max-width: 50px;
+    text-align: center;
+    vertical-align: bottom;
+    padding: 0;
+    height: 21px;
+}
+
+input[type=file]{
+    font-size: 14px;
+    vertical-align: bottom;
+    padding: 0;
+    height: 26px;
+}
+
+footer{
+    text-align: center;
+    font-size: 12px;
+}
+
+.greyed{
+    font-weight: 400;
+    color: #333333;
+
+}
+
+.prev{
+    max-width: 45%;
+    display: inline-block;
+    text-align: center;
+    margin: 1% 1%;
+}
+
+#infoLinks{
+    float: right;
+    margin: 1% 4%;
+    font-weight: 600;
+    font-size: 18px;
+    color: #581596;
+}
+
+#infoLinks a{
+    box-shadow: 0px 4px 4px -3px #581596;
+}
+
+#infoLinks a:hover{
+    color: #9641e5;
+    box-shadow: 0px 4px 4px -3px #9641e5;
+}
+
+#settingsBox{
+    margin: 0 3.5%; /*3% Aligns with images below*/
+}
+
+#settingsContainer{
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:0 0.5%;
+    border: 1px dotted blueviolet;
+}
+
+#t-cell-1{
+    flex: 7; /*flex-grow|shrink|basis, shrink and basis defaults to 1,auto*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#t-cell-2{
+    flex: 1; /*flex-grow|shrink|basis, shrink and basis defaults to 1,auto*/
+    border-left: 1px dotted blueviolet;
+    text-align:center;
+    background: url("Images/Blended_colour_wheel.svg") 50% 0/contain no-repeat ; /*url|position/size|repeat*/
+}
+
+#t-cell-2 div{
+    position: relative;
+}
+
+#t-cell-2 div button[type=button]{
+    position: absolute;
+    left:2px;
+}
+
+
+#subRow1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    clear: left;
+    border-bottom: 1px dotted blueviolet;
+}
+
+#subRow1>div{
+    flex: 1; /*flex-grow|shrink|basis, shrink and basis defaults to 1,auto*/
+    text-align:center;
+    padding-bottom: 0.5em;
+}
+
+#subRow1 button[type=button],#subRow2 button[type=button]{
+    position: relative;
+    top:-1.5px;
+}
+
+#subRow2{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#subRow2>div{
+    display: inline-block;
+    /*padding: 0.25em 1%;*/
+    padding: 0.25em 0.5%;
+}
+
+#subRow2>div>form{
+    display: inline-block;
+}
+
+#previewBox{
+    margin:0;
+    max-width: 100%;
+    text-align: center;
+}
+
+/*About CSS*/
+.credList{
+    margin-top: 0.5em;
+    margin-left: 1%;
+    font-size: 0.95em;
+    line-height: 1.5em;
+}
+
+#aboutContents{
+    font-weight: 400;
+    font-size: 18px;
+    color: #3d3d3d;
+    padding-top: 1em;
+    margin: 0 4%;
+    margin-top: 0.5em;
+}
+
+#aboutContents a{
+    text-decoration: underline;
+}
+
+#aboutContents a:hover{
+    color: #000000;
+    font-weight: 600;
+}
