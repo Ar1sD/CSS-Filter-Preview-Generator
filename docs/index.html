@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="css image, css image effects, css filter, preview, css image filter">
+    <meta name="description" content="Preview Images under CSS Filters">
+    <title>CSS Filter Preview Generator</title>
+    <link rel="stylesheet" type="text/css" href="style-live.css">
+    <script src="script-live.js"></script>
+
+    <!--Fonts-->
+    <!--Open Sans Rg-400/Semi-600/Bd-700-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+    <!--Plugins: Combined and Minified (Live Version)-->
+</head>
+
+<body>
+    <section>
+        <header>
+            <a href="index.html" >CSS Filter Preview Generator</a>
+        </header>
+        <span id="infoLinks">
+            <a href="about.html">About</a> |
+            <a href="https://github.com/Ar1sD/CSS-Filter-Preview-Generator" target="_blank">Github</a>
+        </span>
+    </section>
+
+    <section id="settingsBox">
+        Filter Settings:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="inFile" type="file" value="preview.jpg" multiple="false" accept="image/*" onchange="filechange(this)">
+        <div id="settingsContainer">
+            <div id="t-cell-1">
+                <div id="subRow1">
+                    <div>
+                        Brightness<br>
+                        <form>
+                            <input type="range" id="inputVal-brightR" value="100" min="0" max="750" oninput="brightR()"><br>
+                            <button type="button" onclick="resetFilter(this)">R</button>
+                            <input type="number" id="inputVal-brightN" value="100" oninput="brightN()">%
+                        </form>
+                    </div>
+                    <div>
+                        Contrast<br>
+                        <form>
+                            <input type="range" id="inputVal-contR" value="100" min="0" max="3000" oninput="contR()"><br>
+                            <button type="button" onclick="resetFilter(this)">R</button>
+                            <input type="number" id="inputVal-contN" value="100" oninput="contN()">%
+                        </form>
+                    </div>
+                    <div>
+                        Greyscale<br>
+                        <form>
+                            <input type="range" id="inputVal-greyR" value="0" min="0" max="100" oninput="greyR()"><br>
+                            <button type="button" onclick="resetFilter(this)">R</button>
+                            <input type="number" id="inputVal-greyN" value="0" min="0" max="100" oninput="greyN()">%
+                        </form>
+                    </div>
+                    <div>
+                        Invert<br>
+                        <form>
+                            <input type="range" id="inputVal-invR" value="0" min="0" max="100" oninput="invR()"><br>
+                            <button type="button" onclick="resetFilter(this)">R</button>
+                            <input type="number" id="inputVal-invN" value="0" min="0" max="100" oninput="invN()">%
+                        </form>
+                    </div>
+                    <div>
+                        Opacity<br>
+                        <form>
+                            <input type="range" id="inputVal-opR" value="100" min="0" max="100" oninput="opR()"><br>
+                            <button type="button" onclick="resetFilter(this)">R</button>
+                            <input type="number" id="inputVal-opN" value="100" min="0" max="100" oninput="opN()">%
+                        </form>
+                    </div>
+                    <div>
+                        Saturate<br>
+                        <form>
+                            <input type="range" id="inputVal-satR" value="100" min="0" max="3000" oninput="satR()"><br>
+                            <button type="button" onclick="resetFilter(this)">R</button>
+                            <input type="number" id="inputVal-satN" value="100" min="0" max="3000" oninput="satN()">%
+                        </form>
+                    </div>
+                    <div>
+                        Septia<br>
+                        <form>
+                            <input type="range" id="inputVal-sepR" value="0" min="0" max="100" oninput="sepR()"><br>
+                            <button type="button" onclick="resetFilter(this)">R</button>
+                            <input type="number" id="inputVal-sepN" value="0" min="0" max="100" oninput="sepN()">%
+                        </form>
+                    </div>
+                </div>
+                <div id="subRow2">
+                    <div>
+                        &nbsp;
+                        Blur
+                        <form>
+                            <button type="button" onclick="resetFilter(this)">R</button>
+                            <input type="number" id="inputVal-blur" min="0" value="0" oninput="change()">
+                            px
+                        </form>
+                    </div>
+                    |
+                    <div>
+                        <form>
+                            Shadow
+                            <button type="button" onclick="resetFilter(this)">R</button>
+                            : Horizontal
+                            <input type="number" id="inputVal-shadowH" value="0" oninput="change()">
+                            px&nbsp;&nbsp;
+                            <span class="greyed">[-inf...inf]</span>
+                            Vertical
+                            <input type="number" id="inputVal-shadowV" value="0" oninput="change()">
+                            px&nbsp;&nbsp;
+                            <span class="greyed">[-inf...inf]</span>
+                            Blur
+                            <input type="number" id="inputVal-shadowBlur" min="0" value="0" oninput="change()">
+                            px&nbsp;&nbsp;
+                            Color
+                            <input type="color" id="inputVal-shadowC" value="#555555" oninput="change()">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="t-cell-2">
+                <div>
+                    Hue Rotate<br>
+                    <form>
+                        <input type="range" id="inputVal-hueR" value="0" min="0" max="360" oninput="hueR()"><br>
+                        <input type="number" id="inputVal-hueN" value="0" min="0" max="360" oninput="hueN()"><br>deg<br>
+                        <button type="button" onclick="resetFilter(this)">R</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="previewBox">
+        <div class="prev">
+        Original
+        <img id="original" src="images/preview.jpg" alt="Preview Image">
+        </div>
+
+        <div class="prev">
+        Filtered
+        <img id="preview" src="images/preview.jpg" alt="Preview Image">
+        </div>
+    </section>
+    <footer>
+        &copy; 2017 Ar1sD
+    </footer>
+</body>
+</html>
+
+<!--TODO Add mouse wheel scroll to input boxes-->
+<!--TODO Responsive Design: Add media query/breakpoints for mobile @min 1100 px-->
+<!--TODO Convert inline event handlers to external-->
+<!--TODO: Function Update:Export Filtered Image-->
+
+<!--Resources-->
+<!--Color Wheel | https://github.com/tovic/color-picker-->
+<!--Colour Wheel Image | https://commons.wikimedia.org/wiki/File:Blended_colour_wheel.svg-->
+<!--Default Image | unsplash.com/?photo=tvPvROBv0F4-->
