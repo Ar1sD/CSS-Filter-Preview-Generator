@@ -108,7 +108,7 @@ footer{
     flex: 1; /*flex-grow|shrink|basis, shrink and basis defaults to 1,auto*/
     border-left: 1px dotted blueviolet;
     text-align:center;
-    background: url("Images/Blended_colour_wheel.svg") 50% 0/contain no-repeat ; /*url|position/size|repeat*/
+    background: url("images/Blended_colour_wheel.svg") 50% 0/contain no-repeat ; /*url|position/size|repeat*/
 }
 
 #t-cell-2 div{
