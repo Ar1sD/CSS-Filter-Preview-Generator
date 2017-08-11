@@ -2,13 +2,14 @@
 Preview Images under CSS Filters
 
 Live at: [cssfilterpreview.arzoned.com](http://cssfilterpreview.arzoned.com)  
-Live Version: v1.0.0  
+Live Version: v1.1.0  
 Live Status: Up to date  
 
 JS and CSS Files are combined and minified for the live site.
 
+Screenshot:
+![screenshot of site](images/Screenshot-min.png)
+
 #### ToDo: Elective | Found under index.html
 * Add mouse wheel scroll to input boxes  
-* Responsive Design: Add media query for mobile /@min 1100 px  
 * Convert inline event handlers to external  
-* Function Update:Export Filtered Image  
