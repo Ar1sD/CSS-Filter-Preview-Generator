@@ -4,7 +4,7 @@
  *  Released under the MIT License; see LICENSE.txt
  *  ----------------------------------
  *  Created by Ar1sD on 2017-07-25.
- *  Last Modified on 2017-07-31.
+ *  Last Modified on 2017-08-10.
  */
 
 function init(){
@@ -36,8 +36,25 @@ function init(){
     inShadowBlur=document.getElementById("inputVal-shadowBlur");
     inShadowC=document.getElementById("inputVal-shadowC");
 
+    //Display Not Supported Div
+    if(/Trident/i.test(navigator.userAgent)){
+        console.log("IE Detected");
+        document.getElementById("notSupported").style.display="block";
+    }
+
     //Plugins
-    initColorPicker()   //Function Code Relocated to color-picker.min.js
+    // Color Picker - Browser Specific
+    // IF NOT MS Edge, plugin
+    /*
+    MS Edge has a problem with e.preventDefault() when the plugin is used.
+    This results in 2 layers of color picker panels, the first of which is default
+    and does not work. The second, plugin version is usable.
+    The current fix does not initiate the plugin, and so only the default picker shows up.
+     */
+    if(!/Edge/i.test(navigator.userAgent)){
+        console.log("Not Edge Detected");
+        initColorPicker()   //Function Code Relocated to color-picker.min.js
+    }
 }
 
 // Custom File Input

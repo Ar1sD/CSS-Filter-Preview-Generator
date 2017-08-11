@@ -106,9 +106,9 @@ footer{
 
 #t-cell-2{
     flex: 1; /*flex-grow|shrink|basis, shrink and basis defaults to 1,auto*/
-    border-left: 1px dotted blueviolet;
+    border-left: 1px dotted #ab6aff;
     text-align:center;
-    background: url("images/Blended_colour_wheel.svg") 50% 0/contain no-repeat ; /*url|position/size|repeat*/
+    background: url("images/Blended-colour-wheel.svg") 50% 0/contain no-repeat ; /*url|position/size|repeat*/
 }
 
 #t-cell-2 div{
@@ -127,7 +127,7 @@ footer{
     flex-wrap: wrap;
     width: 100%;
     clear: left;
-    border-bottom: 1px dotted blueviolet;
+    border-bottom: 1px dotted #ab6aff;
 }
 
 #subRow1>div{
@@ -162,10 +162,29 @@ footer{
     margin:0;
     max-width: 100%;
     text-align: center;
+    position: relative;
+}
+
+#notSupported{
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 0.5%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: none;
+}
+
+#notSupportedDiv{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0.75%;
+    background-color: #ffcb1f;
 }
 
 /*About CSS*/
-.credList{
+.indented{
     margin-top: 0.5em;
     margin-left: 1%;
     font-size: 0.95em;
